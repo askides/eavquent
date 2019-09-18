@@ -1,4 +1,4 @@
-# Very short description of the package
+# Laravel Eavquent
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/rennypoz/eavquent.svg?style=flat-square)](https://packagist.org/packages/rennypoz/eavquent)
 [![Build Status](https://img.shields.io/travis/rennypoz/eavquent/master.svg?style=flat-square)](https://travis-ci.org/rennypoz/eavquent)
