@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Traits;
+namespace Rennypoz\Eavquent\Traits;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Arr;
