@@ -3,6 +3,7 @@
 namespace Rennypoz\Eavquent\Database\Eloquent;
 
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Relations\Relation;
 use Rennypoz\Eavquent\Database\Eloquent\Relations\HasOneEav;
 use Rennypoz\Eavquent\Database\Eloquent\Relations\RelationEav;
 
@@ -96,7 +97,7 @@ class Model extends \Illuminate\Database\Eloquent\Model
     {
         $relation = $this->$method();
         
-        if (! $relation instanceof RelationEav) {
+        if ((! $relation instanceof Relation) && (! $relation instanceof RelationEav)) {
             throw new LogicException(sprintf(
                 '%s::%s must return a relationship instance.', static::class, $method
             ));
