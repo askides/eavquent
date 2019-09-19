@@ -1,14 +1,9 @@
 <?php
 
-namespace App;
+namespace Rennypoz\Eavquent\Database\Eloquent;
 
-use Rennypoz\Eavquent\Traits\Eavable;
-use Illuminate\Database\Eloquent\Model;
-
-class EavModel extends Model
+class Model extends \Illuminate\Database\Eloquent\Model
 {
-    use Eavable;
-
     /**
      * Define a one-to-one relationship with eav.
      *
@@ -25,7 +20,11 @@ class EavModel extends Model
 
         $localKey = $localKey ?: $this->getKeyName();
 
-        return $this->newHasOneEav($instance->newQuery(), $this, $instance->getTable() . '.' . $foreignKey, $localKey);
+        if (in_array('Rennypoz\Eavquent\Traits\Eavable', class_uses($this))) {
+            return $this->newHasOneEav($instance->newQuery(), $this, $instance->getTable() . '.' . $foreignKey, $localKey);
+        } 
+
+        return $this->newHasOne($instance->newQuery(), $this, $instance->getTable().'.'.$foreignKey, $localKey);
     }
 
     /**
