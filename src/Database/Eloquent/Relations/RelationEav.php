@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Database\Eloquent\Relations;
+namespace Rennypoz\Eavquent\Database\Eloquent\Relations;
 
 use Closure;
 use Illuminate\Support\Arr;
