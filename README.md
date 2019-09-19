@@ -48,14 +48,16 @@ public function up()
 }
 ```
 
-Next, we have to create our Model:
+Next, we have to create our Model, remember to import the Custom Model instance:
+
+**IMPORTANT:** currently you need to import **Always** the custom model, but the EAV Methods will only be effective if you will add the *Eavquent Trait*! Otherwise, it will be considered as a normal model.
 
 ``` php
 <?php
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Rennypoz\Eavquent\Database\Eloquent\Model;
 
 class Car extends Model
 {
@@ -71,7 +73,7 @@ When you finished, import the Eavquent trait to your model, and you're Done!
 namespace App;
 
 use Rennypoz\Eavquent\Traits\Eavquent;
-use Illuminate\Database\Eloquent\Model;
+use Rennypoz\Eavquent\Database\Eloquent\Model;
 
 class Car extends Model
 {
@@ -79,7 +81,7 @@ class Car extends Model
 }
 ```
 
-## Available Features
+## Available Methods
 
 Currently this package supports some Eloquent Features, i will add extra features in the next versions of the package. All the contributions are really apprecciated! :)
 
@@ -124,6 +126,54 @@ public function delete($id)
 {
     Car::find($id)->delete();
 }
+```
+
+## Available Properties
+
+### Timestamps
+
+``` php
+<?php
+
+namespace App;
+
+use Rennypoz\Eavquent\Traits\Eavquent;
+use Rennypoz\Eavquent\Database\Eloquent\Model;
+
+class Car extends Model
+{
+    use Eavquent;
+
+    public $timestamps = true; // You can use this in order to have the created_at and updated_at. (Beta Version.)
+}
+```
+
+## Available Relationships
+
+Currently, i'm working on the relationships support, for now you can use the **belongsTo()** and the **hasOneEav()** as Custom Methods, normal methods are working perfectly with Non Eavs models.
+
+Follow the example:
+
+``` php
+<?php
+
+# User is a NonEav Model
+$user = App\User::find(1);
+
+# Animal is a NonEav Model
+return $user->animal; // NonEav -> NonEav -- return $this->hasOne('App\Animal');
+
+# Car is a Eav Model
+return $user->car; // NonEav -> Eav -- return $this->hasOneEav('App\Car');
+
+# Car is a Eav Model
+$car = App\Car::find(1);
+
+# Troll is a Eav Model
+return $car->troll; // Eav -> Eav -- return $this->hasOneEav('App\Troll');
+
+# Chained relationships available
+return $user->car->troll; // NonEav -> Eav -> Eav
 ```
 
 ### Changelog
