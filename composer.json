@@ -1,23 +1,24 @@
 {
-    "name": "rennypoz/eavquent",
+    "name": "itsrennyman/eavquent",
     "description": "A Laravel Package for use an EAV table with Eloquent.",
     "keywords": [
-        "rennypoz",
-        "eavquent"
+        "itsrennyman",
+        "eavquent",
+        "eloquent",
+        "laravel"
     ],
-    "homepage": "https://github.com/rennypoz/eavquent",
+    "homepage": "https://github.com/itsrennyman/eavquent",
     "license": "MIT",
     "type": "library",
     "authors": [
         {
             "name": "Renato Pozzi",
             "email": "renato.pozzi.dev@gmail.com",
-            "role": "Developer"
         }
     ],
     "require": {
-        "php": "^7.1",
-        "illuminate/support": ">=5.6"
+        "php": "^7.4",
+        "laravel/framework": ">=8.*"
     },
     "require-dev": {
         "orchestra/testbench": "3.8.*",
@@ -25,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Rennypoz\\Eavquent\\": "src"
+            "ItsRennyMan\\Eavquent\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Rennypoz\\Eavquent\\Tests\\": "tests"
+            "ItsRennyMan\\Eavquent\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -44,10 +45,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Rennypoz\\Eavquent\\EavquentServiceProvider"
+                "ItsRennyMan\\Eavquent\\EavquentServiceProvider"
             ],
             "aliases": {
-                "Eavquent": "Rennypoz\\Eavquent\\EavquentFacade"
+                "Eavquent": "ItsRennyMan\\Eavquent\\EavquentFacade"
             }
         }
     }
