@@ -1,6 +1,6 @@
 <?php
 
-namespace Rennypoz\Eavquent\Tests;
+namespace ItsRennyMan\Eavquent\Tests;
 
 use PHPUnit\Framework\TestCase;
 

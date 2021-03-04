@@ -13,12 +13,12 @@
     "authors": [
         {
             "name": "Renato Pozzi",
-            "email": "renato.pozzi.dev@gmail.com",
+            "email": "renato.pozzi.dev@gmail.com"
         }
     ],
     "require": {
         "php": "^7.4",
-        "laravel/framework": ">=8.*"
+        "laravel/framework": "^8.0"
     },
     "require-dev": {
         "orchestra/testbench": "3.8.*",

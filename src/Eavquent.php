@@ -1,6 +1,6 @@
 <?php
 
-namespace Rennypoz\Eavquent;
+namespace ItsRennyMan\Eavquent;
 
 class Eavquent
 {
